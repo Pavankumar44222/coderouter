@@ -1,0 +1,75 @@
+delimiter //
+create procedure upc(in c int)
+begin
+declare flag int default 0;
+declare s varchar(20);
+declare up cursor for select color from boats where boatid=c;
+declare continue handler for not found set flag=1;
+open up;
+getrec:loop
+fetch up into s;
+if flag=1 then
+leave getrec;
+end if;
+update boats set color="green" where boatid=c;
+end loop getrec;
+close up;
+end
+//
+delimiter //
+create trigger t before update on sam for each row
+begin
+declare emsg varchar(260);
+set emsg= "new balance cannot be lessthan old balance";
+if new.bal < old.bal then
+SIGNAL SQLSTATE'45000'
+set message_text=emsg;
+end if;
+end
+// 
+
+delimiter //
+create procedure p1(in p int)
+begin
+select bal from sam where acc=p;
+end //
+
+
+
+
+
+delimiter //
+create procedure qwe(in n int)
+begin
+declare flag int default 0;
+
+delimiter //
+create procedure qwe(in n int)
+begin
+declare flag int;
+declare s int ;
+declare up cursor for select salary from emp where dno=n;
+declare continue handler for not found set flag=1;
+open up;
+getrec:loop
+fetch up into s;
+if flag=1 then
+leave getrec;
+end if;
+update emp e set salary=salary+210 where dno=n;
+end loop getrec;
+close up;
+end
+//
+
+
+delimiter //
+ create trigger t2 before update on sam for each row
+    begin
+    declare e varchar(250);
+    set e="new balance can not be less than old balance";
+    if new.bal<old.bal then
+    signal sqlstate'45000'
+    set message_text=e;
+    end if;
+    end //

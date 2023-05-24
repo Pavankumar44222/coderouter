@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>webpaga</title>
+	 <link rel="stylesheet" href="style10.css">
+	<style>
+		body{
+			margin:0;
+			padding:0;
+			font-family: sans-serif;
+			background-repeat: no-repeat;
+			background-color:#FFD9D0 ;}
+		.ul1{
+			flex-wrap: wrap;
+			position:absolute;
+			top:20px;
+			left:500px;
+			justify-content: space-around; 
+			transform:translate(-50%,-50%);
+		     padding-left: 30px;
+			display:inline-flex;
+			width:100%;
+		}
+		.ul1 li{
+			list-style: none;}
+		.ul1 li a{
+			position:relative;
+			display:block;
+			padding:10px;
+			margin:20px 0;
+			text-decoration: none;
+			text-transform: uppercase;
+			color:#262626;
+			font-weight: bold;
+			transition: .5s;}
+		.ul1 li a:hover{
+			color:pink;}
+		.ul1 li a:before{
+			color:black;
+			content:'';
+			position:absolute;
+			top:0;
+			left:0;
+			width:100%;
+			height:100%;
+			border-top:1px solid #000;
+	         border-bottom:1px solid #000;
+	        transform:scaleY(2);
+	      opacity:0;
+	      transition:.5s;
+	      z-index: -1;}
+		.ul1 li a:hover:before{
+			transform: scaleY(1);
+			opacity:1;}
+		.ul1 li a:after{
+			content:'';
+			position:absolute;
+			top:1px;
+			left:0;
+			width:100%;
+			height:100%;
+			background-color:#000;
+	        transform:scale(0);
+	transition:.5s;
+	z-index: -1;}
+		.ul1 li a:hover:after{
+			transform: scale(1);}
+			.start{
+			flex-wrap: wrap;
+			width: 100%;
+			background-color: lightyellow;
+			height: 5%;
+			align-items: center;
+			justify-content: space-around;
+			border-radius: 20px;
+			color: black;
+			display: flex;
+			top:0px;
+			position:fixed;
+			overflow:hidden;
+			margin:0px;}
+		.start a{
+			text-decoration: none;
+			color: black;}
+		.start a:hover{
+			font-style:underline;
+			color:red;}
+		.logo{
+			flex-wrap: wrap;
+			box-shadow: 10px 10px  black;
+			color:black;
+			margin:70px 690px;
+			width: 280px;
+			align-items: center;
+			height: 350px;
+			background-color:pink;
+			border-radius: 10px;}
+		.title{
+			flex-wrap: wrap;
+			background-color:;
+			margin-left: 25px;
+			margin-top: 50px;
+			width:600px;
+			height:500px;
+			float:left;}
+		.title h1{
+			font-family: 'Courier New', monospace;
+			text-align: left;
+			font-size: 80px;
+			color:#FF3100 ;
+			text-shadow: 5px 5px 7px black, 10px 10px 20px black, 15px 15px 80px black;}
+		.title p{
+			font-size: 20px;
+				color:#E76647 ;}
+		.log{
+			flex-wrap: wrap;
+			margin:10px 10px;}
+		.logo h1{
+			font-family: cursive;
+			color:black;
+			margin-top: 10px;
+			padding-top: 0px 0px 20px;
+			text-align:center;
+			font-size: 30px;}
+		.log p{
+			color:black;
+			margin :0;
+			padding: 0;
+			font-weight:bold;}
+		.log input{
+			color:black;
+			width:100%;
+			margin-bottom: 20px;}
+		.log input[type="text"],input[type="password"]{
+			border:none;
+			border-bottom:1px solid #fff;
+			background:transparent;
+			outline:none;
+			height:40px;
+			color:black;
+			font-size:16px;}
+		.log input[type="submit"]{
+			border:none;
+			outline:none;
+			height:40px;
+			background:#fb2525;
+			color:#fff;
+			font-size:18px;
+			border-radius:20px;}
+		.log input[type="submit"]:hover{
+			cursor:pointer;
+			background:#ffc107;
+			color:#000;}
+		.log a{
+			text-decoration: none;
+			font-size:12px;
+			line-height: 20px;
+			color:black;}
+		.log a:hover{
+			color:#ffc107;}
+		.log .sign{
+			margin-left: 100px;
+			font-size: 19px;
+			border-radius: 10px;
+			color:blue;}
+		.about{
+			flex-wrap: wrap;
+			padding-top:30px;}
+		.learn{
+			flex-wrap: wrap;
+			margin:10px 10px 10px 10px;
+			width:100%;
+			height:auto;
+			align-items: center;
+			justify-content: space-around;
+			padding:10px 10px;
+			display: flex;
+			flex-direction: row;}
+		.lear{
+			flex-wrap: wrap;
+			margin:10px 10px 10px 10px;
+			background-color: #C6E8E8;
+			width:220px;
+			padding:0px 5px;
+			height:280px;
+			box-shadow: 10px 10px  black;
+            margin: 20px;}
+		.lear1{
+			flex-wrap: wrap;
+			margin:10px 10px 10px 10px;
+			border-radius:10px solid black;
+			background-color: #C6E8E8;
+			width:220px;
+			height:280px;
+			box-shadow: 10px 10px  black;
+            margin: 20px;}
+		.main{
+			width:1000px;
+			height:1000px;}
+		.sub{
+			margin-top: 20px;
+			margin-left: 20px;
+            display:flex;
+			float:left;
+             width:950px;
+             border:3px solid black;
+             height:100px;
+			background-color: lightgreen;
+			border-radius: 40px;}
+		.subb{
+			margin-top:20px;
+			margin-left:20px;
+			color:#0000cc;
+			display:flex;
+			justify-content: space-around;
+			width:950px;
+			height:100px;
+			font-size: 35px;
+			text-align: center;}
+		.sub img{
+			height:100px;
+			width:100px;
+			border-radius: 40px;}
+		.text{
+			margin-left: 30px;
+			font-size: 18px;}
+		.m{
+			float:left;
+			margin-right: 100px;
+			width:1000px;
+			height:100px;
+			color:#0000cc;
+			text-align: center;}
+	    </style>
+</head>
+<body>
+	<ul class="ul1">
+		<li><a href="#">Home</a></li>
+        <li><a href="course.html">Courses</a></li>
+		<li><a href="login2.html">signup</a></li>
+		<li><a href="company.html">MOU's</a></li>
+		<li><a href="#contact">Contact</a></li>
+		<li><a href="second.html">Flexibility</a></li></ul>
+	<div class="title">
+		<p>Lets begin new journy.</p>
+		<H1>CODEROUTER</H1>
+		<P>This is one of the best coding website across the world.Let's join with us and make miracles</P></div>
+	<div class="logo">
+		<u><h1 align="center">LOGIN HERE</h1></u>
+		<div class="log">
+		<form><p color="pink">Username</p>
+			<input type="text" name="" placeholder="Enter Username">
+			<p> Password</p>
+			<input type="password" name="" placeholder="Enter password">
+			<input type="submit" name="" value="login"></br>
+			<a href="#"> Forgot Password</a></br>
+			<a href="#"> don't have account</a></br></form>
+	</div>
+</div>
+<div class="m">
+<h1>Best Mentors is our Strength.</h1>
+<p>Here shown the some our mentors.</p></div>
+<div class="flexbox">
+<div class="card">
+            <img src="fac2.jpg" class="card-img" alt="">
+            <p class="desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum voluptas iusto maiores earum neque.</p></div>
+    <div class="card">
+            <img src="fac1.jpg" class="card-img" alt="">
+          <p class="desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum voluptas iusto maiores earum neque.</p>
+        </div>
+        <div class="card">
+                 <img src="fac6.jpg" class="card-img" alt="">
+          <p class="desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum voluptas iusto maiores earum neque.</p>
+        </div>
+         <div class="card">
+            <img src="fac4.jpg" class="card-img" alt="">
+          <p class="desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum voluptas iusto maiores earum neque.</p>
+        </div>
+         <div class="card">
+            <img src="fac5.jpg" class="card-img" alt="">
+          <p class="desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum voluptas iusto maiores earum neque.</p>
+        </div> </div>
+</div>
+<div class="main">
+	<div class="subb">
+		<p>Some of our Students share their woderfullwords.</p>
+	</div>
+	<div class="sub">
+		<img src="p1.jpg">
+		<div class="text">
+		<p>Hello Friends, My name is Chirag Falor. The institute supported me a lot and I want to give credit to management who provided all the required facilities and to faculties of this website who were experts of their subjects.</p>
+   </div></div>
+	<div class="sub">
+		<img src="p2.jpg">
+		<div class="text">
+		<p>Hello Friends, my name is Sibasish Rout. I joined the 2 year integrated classroom program.. I owe my success to the facilities and teachers at this institute. They were instrumental in improving my concepts as well as question solving ability.
+      </p></div></div>
+	<div class="sub">
+		<img src="p3.jpg">
+		<div class="text">
+		<p>Hello Friends, my name is Avval Amil. I joined the 2 year integrated classroom program.. I owe my success to the facilities and teachers at this institute. They were instrumental in improving my concepts as well as question solving ability.
+      </p></div></div>
+	<div class="sub">
+		<img src="p4.jpg">
+		<div class="text">
+		<p>Hello Friends, My name is Chirag Falor. The institute supported me a lot and I want to give credit to management who provided all the required facilities and to faculties of this website who were experts of their subjects.</p>
+   </div></div>
+	<div class="sub">
+		<img src="p5.jpg">
+		<div class="text">
+		<p>Hello Friends, my name is Sibasish Rout. I joined the 2 year integrated classroom program.. I owe my success to the facilities and teachers at this institute. They were instrumental in improving my concepts as well as question solving ability.</p>
+   </div></div>
+	<div class="sub">
+		<img src="p6.jpg">
+		<div class="text">
+		<p>Hello Friends, my name is Avval Amil. I joined the 2 year integrated classroom program.. I owe my success to the facilities and teachers at this institute. They were instrumental in improving my concepts as well as question solving ability.
+      </p>
+   </div></div></div>
+ <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+ <div id="contact">   
+<h1> For any help Contact us.</h1>
+<p>24 hours on duty.if you get any doubt at any cost and at any time we are with you.don't worry.</p>
+<p>Mobile Number 1:9998887776</p>
+<p>Mobile Number 2:9991237776</p>
+<p>Mobile Number 3:9995677776</p>
+<p>Gmail-id :codewithme@gmail.com</p>
+</div>
+</body>
+</html>
